@@ -1,0 +1,32 @@
+version: "3.1"
+
+services:
+  project.development.local:
+    image: development:project
+    volumes:
+      - ./project:/app:cached
+    depends_on:
+      - mysql.development.local
+      - nginx-proxy
+    environment:
+      - VIRTUAL_HOST=project.development.local
+
+  mysql.development.local:
+    image: development:mysql
+    restart: always
+    volumes:
+      - "./db-data/mysql:/var/lib/mysql"
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./dev-https:/etc/nginx/certs:ro
+      - ./docker_resources/nginx/proxy.conf:/etc/nginx/proxy.conf

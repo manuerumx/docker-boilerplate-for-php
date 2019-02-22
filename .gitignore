@@ -1,0 +1,8 @@
+# Jetbrains editors
+.idea/
+
+# Apple
+.DS_STORE
+
+# Visual Studio Code
+.vscode
