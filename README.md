@@ -18,3 +18,7 @@ Go to the root of the project and
 Wait until the MySQL server is configured, then you can access your project through
 
 http://project.development.local
+
+
+### Data
+The data from MySQL is stored in the directory `db-data`, so you don't lose your information every time you start/rebuild the containers.
