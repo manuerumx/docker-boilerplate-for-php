@@ -1,3 +1,4 @@
 *
 !/.gitignore
-!/generate-selfsigned-certificate
+!/generate-selfsigned-certificate.sh
+
