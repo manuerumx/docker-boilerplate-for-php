@@ -43,7 +43,7 @@ pecl install xdebug
 
 docker-php-ext-enable xdebug
 
-echo -e "xdebug.remote_enable=1 \nxdebug.remote_host=EB-C02W60KXHV27.local" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+echo "\nxdebug.xdebug.idekey=PHPSTORM\nxdebug.remote_enable=1 \nxdebug.remote_host=EB-C02W60KXHV27.local" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 a2enmod rewrite
 
