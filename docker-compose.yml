@@ -2,7 +2,7 @@ version: "3.1"
 
 services:
   project.development.local:
-    image: development:project
+    build: docker_resources/web
     volumes:
       - ./project:/app:cached
     depends_on:
@@ -12,7 +12,7 @@ services:
       - VIRTUAL_HOST=project.development.local
 
   mysql.development.local:
-    image: development:mysql
+    build: docker_resources/db
     restart: always
     volumes:
       - "./db-data/mysql:/var/lib/mysql"
