@@ -4,7 +4,7 @@
 2. Install dnsmasq to resolve `*.local` to `127.0.0.1`
     - Run: `bin/install-dnsmasq-mac.sh`
     - Not in mac? Add manually the domains to `/etc/hosts`
-3. Build the custom images for the project
+3. Build the custom images for the project (Optional)
     - DB (MySQL)
         - `cd docker_resources/db`
         - `docker build -t development:mysql .`
