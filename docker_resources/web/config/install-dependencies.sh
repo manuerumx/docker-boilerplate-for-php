@@ -1,8 +1,5 @@
 set -e
 
-# for libjpeg8, libpng12-0, libxrender1 and libfontconfig1
-echo "deb http://ftp.br.debian.org/debian wheezy main" >> /etc/apt/sources.list
-
 apt-get update
 
 apt-get install -y \
@@ -10,20 +7,18 @@ apt-get install -y \
   libxml2-dev \
   libmysqlclient-dev \
   libmcrypt-dev \
-  netcat \
   libicu-dev \
-  libjpeg8 \
-  libpng12-0 \
-  libxrender1 \
-  libfontconfig1 \
   libgpgme11-dev \
   libpng-dev \
   libpq-dev \
+  netcat \
+  nano \
   git
 
 docker-php-ext-install -j$(nproc) \
   mysqli \
   bcmath \
+  mbstring \
   mcrypt \
   soap \
   pdo \
@@ -34,7 +29,8 @@ docker-php-ext-install -j$(nproc) \
   pgsql \
   pdo_pgsql \
   zip \
-  opcache
+  opcache \
+  json
 
 pecl install gnupg && \
   echo "extension=gnupg.so" > /usr/local/etc/php/conf.d/gnupg.ini

@@ -1,4 +1,4 @@
-FROM php:7.1.12-apache-jessie
+FROM php:7.1-apache-jessie
 
 COPY config/install-dependencies.sh /
 RUN chmod o+x /install-dependencies.sh

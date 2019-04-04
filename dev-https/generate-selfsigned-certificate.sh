@@ -20,7 +20,7 @@ openssl req -x509 -out $HOSTNAME.crt -keyout $HOSTNAME.key \
    printf "[dn]\nCN=$HOSTNAME\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:$HOSTNAME\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
 
 
-#openssl req -x509 -out project.development.local.crt -keyout project.development.local.key \
-#  -newkey rsa:2048 -nodes -sha256 \
-#  -subj '/CN=project.development.local' -extensions EXT -config <( \
-#   printf "[dn]\nCN=project.development.local\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:project.development.local\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
+openssl req -x509 -out web.dev.local.crt -keyout web.dev.local.key \
+  -newkey rsa:2048 -nodes -sha256 \
+  -subj '/CN=web.dev.local' -extensions EXT -config <( \
+   printf "[dn]\nCN=web.dev.local\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:web.dev.local\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
